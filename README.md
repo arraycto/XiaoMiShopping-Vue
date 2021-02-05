@@ -1,6 +1,9 @@
 # 主要技术栈
 前端:vue2 + vue-router + vuex + axios + sass （vue-cli4搭建的）<br>
 后端:Springboot + Mybatis + MySQL 
+
+[后端部分仓库](https://github.com/ZTY18873242003/XiaoMiShopping-springboot)
+
 # 启动
 ```
 前端
