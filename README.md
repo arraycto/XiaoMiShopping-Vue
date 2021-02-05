@@ -1,4 +1,4 @@
-# 技术栈
+# 主要技术栈
 前端:vue2 + vue-router + vuex + axios + sass （vue-cli4搭建的）<br>
 后端:Springboot + Mybatis + MySQL 
 # 启动
@@ -12,19 +12,6 @@
 ```
 # vue-cli项目注意点
 - vue-cli项目克隆到本地，需要cnpm install（即安装依赖包），再cnpm run serve（即启动项目）
-- cnpm install [插件名] --save(-S)      【保存到dependencies:{xxx}】
-	  cnpm install [插件名] --save-dev(-D)  【保存到devDependencies:{xxx}】
-	  区别：
-	       devDependencies下的插件，是项目上线之后不会用到的插件，即不打包到项目中；
-	  	   dependencies下的插件，是项目发布上线之后还会依赖用到的插件，没有这些插件，项目不能运行，即打包到项目中
-	  总之： 后面安装的插件都保存到dependencies:{xxx}中就完事了
-
-```
-
-- this.$store.dispatch('saveUserName',res.username) 这句等同下面3条语句
-	      1.import { mapActions } from 'vuex' 【导入vuex的actions，用于actions方法很多的情况，这里就尝试下新形式】
-	      2. ...mapActions(['saveUserName']) 【参数是个数组用于字符串存放方法名，即结构actions中的saveUserName()方法，这里就直接可以使用该方法】
-	      3. this.saveUserName(res.username)  【正常使用该方法，传递参数】
 
 - 获取动态路由后面的参数： （如获取参数32， http://localhost:8080/#/product/32）
 ```
@@ -86,19 +73,6 @@ axios.get( 'url',{ 参数名：值 } ).then(function (response) {}).catch(functi
   * src/storage： 这里放置缓存sessionStorage、cookie、localStorage等存取以及删除等公共方法，便于操作缓存（虽然已经缓存提供了一些API，但自己封装的能根据项目而定）
 
 
- 
- 
-# 项目简介
- * public文件夹： 是项目的根目录，即 '/imgs/logo.png'来引用public下的资源
-
-* main.js：
-	* 全局配置，这里配置router、store、Vue, 一些各个.vue页面通用的插件放入Vue.use(VueCookie)中
-	* 使用图片懒加载插件，加载内容时，显示loading指向的.svg矢量图(可根据自己需要改变)
-	```
-	import VueLazyLoad from 'vue-lazyload'
-	Vue.use(VueLazyLoad, {
-  		loading: '/imgs/loading-svg/loading-bars.svg'
-	})
 	```
 
 
